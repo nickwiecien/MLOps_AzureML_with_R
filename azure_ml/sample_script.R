@@ -2,11 +2,23 @@ library(azuremlsdk)
 
 packageVersion('azuremlsdk')
 
-test_var <- Sys.getenv("TENANT_ID")
-print(test_var)
+tenant_id <- Sys.getenv("TENANT_ID")
+svc_pr_secret <- Sys.getenv("SERVICE_PRINCIPAL_SECRET")
+svc_pr_id <- Sys.getenv("SERVICE_PRINCIPAL_ID")
 
-ws <- load_workspace_from_config()
+ws_name <- Sys.getenv("WORKSPACE_NAME")
+
+sp_auth <- service_principal_authentication(
+    tenant_id,
+    svc_pr_id,
+    svc_pr_secret,
+    cloud = "AzureCloud"
+)
+
+ws <- get_workspace(ws_name, auth=sp_auth)
 
 ds <- get_default_datastore(ws)
 
 print(ws)
+
+print(ds)

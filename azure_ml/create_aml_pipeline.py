@@ -50,7 +50,12 @@ except ComputeTargetException:
 default_ds = ws.get_default_datastore()
 
 env = Environment.from_dockerfile(name=os.getenv("AML_ENV_NAME"), dockerfile='./Dockerfile')
-env.environment_variables = {"TENANT_ID": os.getenv("TENANT_ID")}
+env.environment_variables = {
+    "TENANT_ID": os.getenv("TENANT_ID"),
+    "SERVICE_PRINCIPAL_ID": os.getenv("SERVICE_PRINCIPAL_ID"),
+    "SERVICE_PRINCIPAL_SECRET": os.getenv("SERVICE_PRINCIPAL_SECRET"),
+    "WORKSPACE_NAME": os.getenv("WORKSPACE_NAME")
+    }
 env.register(ws)
 
 import json
@@ -65,7 +70,7 @@ with open('config.json', 'w') as f:
 from azureml.core import ScriptRunConfig
 
 train_config = ScriptRunConfig(source_directory='.',
-                            command=['Rscript sample_script.R'],
+                            command=['Rscript {}'.format(os.getenv("R_SCRIPT"))],
                             compute_target=compute_target,
                             environment=env)
 

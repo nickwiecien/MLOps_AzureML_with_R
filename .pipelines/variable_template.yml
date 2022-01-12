@@ -40,3 +40,5 @@ variables:
     value: automl_job.py
   - name: EXPERIMENT_NAME
     value: mlops_pipeline_run
+  - name: R_SCRIPT
+    value: sample_script.R
