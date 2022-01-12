@@ -44,7 +44,6 @@ stages:
             
           $json | Out-File $(PIPELINE_DIR)/config.json
         workingDirectory: '$(Build.SourcesDirectory)'
-        pwsh: true # For Linux
     - task: AzureCLI@1
       inputs:
         azureSubscription: '$(WORKSPACE_SVC_CONNECTION)'
