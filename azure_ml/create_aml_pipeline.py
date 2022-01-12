@@ -52,6 +52,14 @@ default_ds = ws.get_default_datastore()
 env = Environment.from_dockerfile(name=os.getenv("AML_ENV_NAME"), dockerfile='./Dockerfile')
 env.register(ws)
 
+import json
+with open('config.json', 'w') as f:
+    f.write(json.dumps({
+        "subscription_id": subscription_id,
+        "resource_group": resource_group,
+        "workspace_name": workspace_name
+    }))
+
 
 from azureml.core import ScriptRunConfig
 
