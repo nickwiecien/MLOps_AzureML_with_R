@@ -10,10 +10,10 @@ pr:
 trigger:
   branches:
     include:
-    - mlops
+    - main
   paths:
     include:
-    - model_training/
+    - azure_ml/
 
 variables:
 - template: variable_template.yml
