@@ -54,7 +54,9 @@ env.environment_variables = {
     "TENANT_ID": os.getenv("TENANT_ID"),
     "SERVICE_PRINCIPAL_ID": os.getenv("SERVICE_PRINCIPAL_ID"),
     "SERVICE_PRINCIPAL_SECRET": os.getenv("SERVICE_PRINCIPAL_SECRET"),
-    "WORKSPACE_NAME": os.getenv("WORKSPACE_NAME")
+    "WORKSPACE_NAME": workspace_name,
+    "RESOURCE_GROUP": resource_group,
+    "SUBSCRIPTION_ID": subscription_id
     }
 env.register(ws)
 
