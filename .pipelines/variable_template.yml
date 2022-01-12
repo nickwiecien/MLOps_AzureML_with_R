@@ -15,7 +15,7 @@ variables:
   - name: VM_SIZE
     value: STANDARD_DS3_V2
   - name: AML_COMPUTE_CLUSTER_NAME
-    value: nikwieci6
+    value: cpu-cluster
   - name: AML_CLUSTER_MIN_NODES
     value: 0
   - name: AML_CLUSTER_MAX_NODES
