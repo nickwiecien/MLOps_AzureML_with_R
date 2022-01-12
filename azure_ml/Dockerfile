@@ -7,7 +7,7 @@ RUN apt-get update -qq && \
 # Create link for python
 RUN ln -f /usr/bin/python3 /usr/bin/python
 
-RUN conda install -c r -y pip=20.1.1 openssl=1.1.1 c r-base rpy2
+RUN conda install -c r -y pip=20.1.1 openssl=1.1.1c r-base rpy2
 RUN conda install -c conda-force -y mscorefonts
 RUN conda clean -ay
 RUN pip install --no-cache-dir azureml-defaults
