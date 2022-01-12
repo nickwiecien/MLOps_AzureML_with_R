@@ -24,15 +24,13 @@ pool:
 
 
 stages:
-- stage: 'Publish_AML_Pipeline'
-  displayName: 'Publish AML Pipeline'
+- stage: 'Write_Config_File'
+  displayName: 'Write AML Config File'
   jobs:
-  - job: "AML_PIPELINE"
-    displayName: "Build and Publish AML Pipeline"
-    container: mlops
-    timeoutInMinutes: 0
+  - job: "CONFIG_FILE"
+    displayName: "Write AML Config File"
     steps:
-    - task: PowerShell@2
+     - task: PowerShell@2
       inputs:
         targetType: 'inline'
         script: |
@@ -44,6 +42,14 @@ stages:
             
           $json | Out-File $(PIPELINE_DIR)/config.json
         workingDirectory: '$(Build.SourcesDirectory)'
+- stage: 'Publish_AML_Pipeline'
+  displayName: 'Publish AML Pipeline'
+  jobs:
+  - job: "AML_PIPELINE"
+    displayName: "Build and Publish AML Pipeline"
+    container: mlops
+    timeoutInMinutes: 0
+    steps:
     - task: AzureCLI@1
       inputs:
         azureSubscription: '$(WORKSPACE_SVC_CONNECTION)'
