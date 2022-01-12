@@ -38,3 +38,5 @@ variables:
     value: aml_pipeline_step_scripts
   - name: AUTOML_JOB_SUBMIT_PIPELINE_SCRIPT
     value: automl_job.py
+  - name: EXPERIMENT_NAME
+    value: mlops_pipeline_run

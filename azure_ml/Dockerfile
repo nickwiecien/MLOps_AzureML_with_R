@@ -3,7 +3,7 @@ FROM mcr.microsoft.com/azureml/base:openmpi3.1.2-ubuntu18.04
 RUN conda install -c r -y pip=20.1.1 openssl=1.1.1c r-base rpy2
 RUN conda install -c conda-forge -y mscorefonts
 RUN conda clean -ay
-RUN pip install --no-cache-dir azureml-defaults
+RUN pip install --no-cache-dir azureml-defaults cryptography>=2.5
 
 ENV TAR="bin/tar"
 
