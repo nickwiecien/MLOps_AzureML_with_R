@@ -50,7 +50,7 @@ except ComputeTargetException:
 default_ds = ws.get_default_datastore()
 
 env = Environment.from_dockerfile(name=os.getenv("AML_ENV_NAME"), dockerfile='./Dockerfile')
-env.environment_variables = {"HELLO": "NICK"}
+env.environment_variables = {"TENANT_ID": os.getenv("TENANT_ID")}
 env.register(ws)
 
 import json

@@ -2,7 +2,7 @@ library(azuremlsdk)
 
 packageVersion('azuremlsdk')
 
-test_var <- Sys.getenv("HELLO")
+test_var <- Sys.getenv("TENANT_ID")
 print(test_var)
 
 ws <- load_workspace_from_config()
