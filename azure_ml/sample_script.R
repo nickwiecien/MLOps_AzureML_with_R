@@ -1,6 +1,6 @@
 library(azuremlsdk)
 
-ws <- get_workspace('parker_aml_ws')
+ws <- load_workspace_from_config()
 
 ds <- get_default_datastore(ws)
 

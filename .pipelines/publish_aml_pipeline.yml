@@ -17,6 +17,7 @@ trigger:
 
 variables:
 - template: variable_template.yml
+- group: aml_vg
 
 pool:
   vmImage: ubuntu-latest
@@ -31,6 +32,19 @@ stages:
     container: mlops
     timeoutInMinutes: 0
     steps:
+    - task: PowerShell@2
+      inputs:
+        targetType: 'inline'
+        script: |
+          $json = '{
+          "subscription_id": "$(SUBSCRIPTION_ID)",
+          "resource_group": "$(RESOURCE_GROUP)",
+          "workspace_name": "$(WORKSPACE_NAME)"
+          }'
+            
+          $json | Out-File $(PIPELINE_DIR)/config.json
+        workingDirectory: '$(Build.SourcesDirectory)'
+        pwsh: true # For Linux
     - task: AzureCLI@1
       inputs:
         azureSubscription: '$(WORKSPACE_SVC_CONNECTION)'
