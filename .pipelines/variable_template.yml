@@ -13,7 +13,7 @@ variables:
     
   # AML Compute Cluster Config
   - name: VM_SIZE
-    value: Standard_DS3_V2
+    value: STANDARD_DS3_V2
   - name: AML_COMPUTE_CLUSTER_NAME
     value: cpu-cluster
   - name: AML_CLUSTER_MIN_NODES
