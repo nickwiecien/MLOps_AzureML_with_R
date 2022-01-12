@@ -1,13 +1,7 @@
 # Pipeline template that defines common runtime environment variables used across all environments.
 variables:
 
-  # Azure ML Resource Variables
-  - name: LOCATION
-    value: eastus2
-  - name: RESOURCE_GROUP
-    value: parker_aml_rg
-  - name: WORKSPACE_NAME
-    value: parker_aml_ws
+  # Azure ML Workspace Connection
   - name: WORKSPACE_SVC_CONNECTION
     value: aml-workspace-connection
     
@@ -36,8 +30,6 @@ variables:
     value: Pipeline for executing an R script
   - name: PIPELINE_STEPS_DIR
     value: aml_pipeline_step_scripts
-  - name: AUTOML_JOB_SUBMIT_PIPELINE_SCRIPT
-    value: automl_job.py
   - name: EXPERIMENT_NAME
     value: mlops_pipeline_run
   - name: R_SCRIPT

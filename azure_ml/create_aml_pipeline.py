@@ -60,15 +60,6 @@ env.environment_variables = {
     }
 env.register(ws)
 
-import json
-with open('config.json', 'w') as f:
-    f.write(json.dumps({
-        "subscription_id": subscription_id,
-        "resource_group": resource_group,
-        "workspace_name": workspace_name
-    }))
-
-
 from azureml.core import ScriptRunConfig
 
 train_config = ScriptRunConfig(source_directory='.',
