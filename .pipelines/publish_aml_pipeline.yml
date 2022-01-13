@@ -64,6 +64,9 @@ stages:
     timeoutInMinutes: 0
     steps:
     - task: AzureCLI@1
+       env:
+        WORKSPACE_NAME: $(WORKSPACE-NAME)
+        RESOURCE_GROUP: $(RESOURCE-GROUP)
       inputs:
         azureSubscription: '$(WORKSPACE_SVC_CONNECTION)'
         scriptLocation: inlineScript
