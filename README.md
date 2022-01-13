@@ -21,6 +21,13 @@ The guided walkthrough below highlights how to deploy and trigger an Azure Machi
 
 It is recommended to first fork this repo, and then run the attached pipelines <i>as-is</i> before attempting to edit the underlying R scripts. Successful execution will validate that all connections can be made and that the remotely execute AML pipeline can authenticate to the workspace as expected.
 
+- [Step 1 - Create Azure DevOps Service Connection to Machine Learning Workspace](#step-1---create-azure-devops-service-connection-to-machine-learning-workspace)
+ - [Step 2 - Populate Azure Key Vault with AML Workspace & Service Principal Values](#step-2---populate-azure-key-vault-with-aml-workspace--service-principal-values)
+ - [Step 3 - Create Key Vault-Linked Variable Group in Azure DevOps](#step-3---create-key-vault-linked-variable-group-in-azure-devops)
+ - [Step 4 - Configure and Run your Continuous Integration Pipeline in Azure DevOps](#step-4---configure-and-run-your-continuous-integration-pipeline-in-azure-devops)
+ - [Step 5 - Review Azure Machine Learning Pipeline Execution in Workspace](#step-5---review-azure-machine-learning-pipeline-execution-in-workspace)
+ - [Step 6 - Integrate Custom R Code](#step-6---integrate-custom-r-code)
+
 ## Step 1 - Create Azure DevOps Service Connection to Machine Learning Workspace
 
 From your Azure DevOps project, create a new service connection to your target Azure Machine Learning Workspace.
