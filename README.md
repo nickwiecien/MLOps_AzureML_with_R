@@ -13,7 +13,7 @@ To execute the pipelines in this repository you will need to have access to the 
 * Azure DevOps Project
 * Service Principal
 
-<i><b>Note:</b></i> You should grant your created service principal <i>Contributor</i> access to your AML workspace.
+<i><b>Note:</b></i> You should grant your created service principal <i>Contributor</i> access to your target AML workspace.
 
 ## Getting Started
 
