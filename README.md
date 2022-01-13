@@ -36,3 +36,24 @@ From your Azure DevOps project, create a new service connection to your target A
 * Under Scope level, select <i>Machine Learning Workspace</i>, then choose the appropriate subscription, resource group, and AML resource. Name your service connection `aml-workspace-connection`. Finally, under security, check <i>Grant access permission to all pipelines</i> then click <i>Save</i>.  
 
 ![AML Workspace Connection](doc_img/04.png?raw=true "AML Workspace Connection")
+
+## Step 2 - Populate Azure Key Vault with AML Workspace & Service Principal Values
+
+* From the Azure portal, navigate to your target Key Vault and click <i>Secrets</i>. If you <u>do not</u> have permissions to view or create secrets in your Key Vault follow the steps below. First, navigate to <i>Access policies</i> along the left blade, click <i>+ Create</i>. From the Permissions tab, select <b>Get, List, and Set<b> under Secret Permissions and click <i>Next</i>. 
+
+![Key Vault Permissions](doc_img/05.png?raw=true "Key Vault Permissions")
+
+* Under the Principal tab, select your Active Directory account and click <i>Next</i>. Skip the optional application section and under Review + create click <i>Create</i>.
+
+![Access Policy Create](doc_img/06.png?raw=true "Access Policy Create")
+
+* Navigate to the <i>Secrets</i> tab along the left blade and create 5 new secrets with the values listed in the table below.
+
+| Secret Name | Secret Value |
+|-------------|--------------|
+|RESOURCE-GROUP|Name of the resource group which contains your target AML workspace|
+|WORKSPACE-NAME|Name of your target AML workspace|
+|TENANT-ID|Tenant ID associated with your service principal. Listed as `Directory (tenant) ID` in the service principal overview tab|
+|SERVICE-PRINCIPAL-ID|Client ID of the service principal.  Listed as  `Application (client) ID` in the service principal overview tab|
+|SERVICE-PRINCIPAL-SECRET|Secret value associated with your service principal|
+

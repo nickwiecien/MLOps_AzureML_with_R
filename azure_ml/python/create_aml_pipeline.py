@@ -11,6 +11,9 @@ resource_group = os.getenv("RESOURCE-GROUP")
 workspace_name = os.getenv("WORKSPACE-NAME")
 workspace_region = os.getenv("WORKSPACE-REGION")
 
+print(workspace_name)
+print('hey')
+
 try:
     # ws = Workspace.from_config()
     ws = Workspace(subscription_id=subscription_id, 
