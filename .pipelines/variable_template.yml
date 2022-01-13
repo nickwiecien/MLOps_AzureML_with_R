@@ -21,7 +21,7 @@ variables:
   - name: AML_ENV_NAME
     value: r_env
   - name: PIPELINE_DIR
-    value: azure_ml
+    value: azure_ml/python
   - name: PIPELINE_CREATION_SCRIPT
     value: create_aml_pipeline.py
   - name: PIPELINE_NAME
@@ -32,5 +32,7 @@ variables:
     value: aml_pipeline_step_scripts
   - name: EXPERIMENT_NAME
     value: mlops_pipeline_run
+  - name: R_DIR
+    value: azure_ml/R
   - name: R_SCRIPT
     value: sample_script.R
