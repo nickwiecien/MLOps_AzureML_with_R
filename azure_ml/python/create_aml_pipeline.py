@@ -12,6 +12,8 @@ workspace_name = os.getenv("WORKSPACE-NAME")
 workspace_region = os.getenv("WORKSPACE-REGION")
 
 print(workspace_name)
+print(subscription_id)
+print(resource_group)
 print('hey')
 
 try:
