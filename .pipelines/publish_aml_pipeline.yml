@@ -17,7 +17,7 @@ trigger:
 
 variables:
 - template: variable_template.yml
-- group: aml_vg
+- group: aml_kv_vg
 
 pool:
   vmImage: ubuntu-latest
