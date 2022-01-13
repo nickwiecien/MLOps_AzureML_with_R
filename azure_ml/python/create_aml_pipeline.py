@@ -62,7 +62,7 @@ env.register(ws)
 
 from azureml.core import ScriptRunConfig
 
-train_config = ScriptRunConfig(source_directory='..{}'.format(os.getenv("R_DIR")),
+train_config = ScriptRunConfig(source_directory='../../{}'.format(os.getenv("R_DIR")),
                             command=['Rscript {}'.format( os.getenv("R_SCRIPT"))],
                             compute_target=compute_target,
                             environment=env)
