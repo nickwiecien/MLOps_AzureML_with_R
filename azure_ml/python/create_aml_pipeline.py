@@ -7,14 +7,9 @@ import os
 
 #Connect to AML Workspace
 subscription_id = os.getenv("SUBSCRIPTION_ID")
-resource_group = os.getenv("RESOURCE-GROUP")
+resource_group = os.getenv("RESOURCE_GROUP")
 workspace_name = os.getenv("WORKSPACE_NAME")
-workspace_region = os.getenv("WORKSPACE-REGION")
-
-print(workspace_name)
-print(subscription_id)
-print(resource_group)
-print('hey')
+workspace_region = os.getenv("WORKSPACE_REGION")
 
 try:
     # ws = Workspace.from_config()
@@ -52,9 +47,9 @@ default_ds = ws.get_default_datastore()
 
 env = Environment.from_dockerfile(name=os.getenv("AML_ENV_NAME"), dockerfile='./Dockerfile')
 env.environment_variables = {
-    "TENANT_ID": os.getenv("TENANT-ID"),
-    "SERVICE_PRINCIPAL_ID": os.getenv("SERVICE-PRINCIPAL-ID"),
-    "SERVICE_PRINCIPAL_SECRET": os.getenv("SERVICE-PRINCIPAL-SECRET"),
+    "TENANT_ID": os.getenv("TENANT_ID"),
+    "SERVICE_PRINCIPAL_ID": os.getenv("SERVICE_PRINCIPAL_ID"),
+    "SERVICE_PRINCIPAL_SECRET": os.getenv("SERVICE_PRINCIPAL_SECRET"),
     "WORKSPACE_NAME": workspace_name,
     "RESOURCE_GROUP": resource_group,
     "SUBSCRIPTION_ID": subscription_id

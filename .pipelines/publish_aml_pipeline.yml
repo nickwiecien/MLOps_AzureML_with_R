@@ -36,6 +36,10 @@ stages:
     - task: AzureCLI@1
       env:
         WORKSPACE_NAME: $(WORKSPACE-NAME)
+        RESOURCE_GROUP: $(RESOURCE-GROUP)
+        SERVICE_PRINCIPAL_ID: $(SERVICE-PRINCIPAL-ID)
+        SERVICE_PRINCIPAL_SECRET: $(SERVICE-PRINCIPAL-SECRET)
+        TENANT_ID: $(TENANT-ID)
       inputs:
         azureSubscription: '$(WORKSPACE_SVC_CONNECTION)'
         scriptLocation: inlineScript
