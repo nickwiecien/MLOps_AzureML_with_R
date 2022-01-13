@@ -97,6 +97,18 @@ From your Azure DevOps project, create a new service connection to your target A
 
 * From the pipeline review panel click <i>Run</i>. This will trigger a CI pipeline execution, upon successful completion your pipeline stages should appear similar to what is shown below.
 
-![Pipeline Status](doc_img/14.png?raw=true "Pipeline Status")
+![Pipeline Status](doc_img/15.png?raw=true "Pipeline Status")
 
+## Step 5 - Review Azure Machine Learning Pipeline Execution in Workspace
 
+* Navigate to your target Azure Machine Learning workspace. Select <i>Pipelines</i> from the sidebar menu and navigate to the <i>Pipeline endpoints</i> tab. You should see a published pipeline endpoint with the name `r_pipeline`. Note: this is the default pipeline name that can be overridden by updating the values in the `.pipelines/variable_template.yml` file.
+
+![Published Pipeline Endpoint](doc_img/16.png?raw=true "Published Pipeline Endpoint")
+
+* Navigate to the experiments tab. The Azure DevOps pipeline should have executed an experiment called `mlops_pipeline_run`. Once again, this value can be overridden by replacing the values in the `.pipelines/variable_template.yml` file. If successful this pipeline execution should reflect completion of a single step called <i>Run R Script</i>.
+
+![Published Pipeline Endpoint](doc_img/17.png?raw=true "Published Pipeline Endpoint")
+
+## Step 6 - Integrate Custom R Code
+
+* At this point you have tested and validated that all connections in Azure have been made correctly and that you can successfully execute an R script remotely inside of AML - nice work! You can customize the environment that your R script runs in by modifying the Dockerfile definition at `azure_ml/python/Dockerfile`. Also, you can update the executed R script by placing a new R script inside the `azure_ml/R` directory - be sure to modify the name of the `R_SCRIPT` variable inside `.pipelines/variable_template`.
