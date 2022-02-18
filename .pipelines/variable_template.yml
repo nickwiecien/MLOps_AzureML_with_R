@@ -19,7 +19,7 @@ variables:
   
   # AML Pipeline Creation Config
   - name: AML_ENV_NAME
-    value: r_env
+    value: r_env2
   - name: PIPELINE_DIR
     value: azure_ml/python
   - name: PIPELINE_CREATION_SCRIPT
