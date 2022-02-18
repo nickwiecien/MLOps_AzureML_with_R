@@ -10,7 +10,7 @@ ENV TAR="bin/tar"
 
 # Install additional R packages
 RUN R -e "install.packages(c('remotes', \
-        'reticulate', \
+        'reticulate==1.23', \
         'optparse', \
         'azuremlsdk'), repos='https://cloud.r-project.org/')"
         
