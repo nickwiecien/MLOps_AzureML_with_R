@@ -45,7 +45,8 @@ except ComputeTargetException:
 #Get default datastore
 default_ds = ws.get_default_datastore()
 
-env = Environment.from_dockerfile(name=os.getenv("AML_ENV_NAME"), dockerfile='./Dockerfile')
+# env = Environment.from_dockerfile(name=os.getenv("AML_ENV_NAME"), dockerfile='./Dockerfile')
+env = Environment.get(ws, 'r_env', version='14')
 env.environment_variables = {
     "TENANT_ID": os.getenv("TENANT_ID"),
     "SERVICE_PRINCIPAL_ID": os.getenv("SERVICE_PRINCIPAL_ID"),
@@ -54,7 +55,7 @@ env.environment_variables = {
     "RESOURCE_GROUP": resource_group,
     "SUBSCRIPTION_ID": subscription_id
     }
-env.register(ws)
+# env.register(ws)
 
 from azureml.core import ScriptRunConfig
 
