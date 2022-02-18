@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/azureml/base:openmpi3.1.2-ubuntu18.04:20210615.v1
+FROM mcr.microsoft.com/azureml/openmpi3.1.2-ubuntu18.04:20210615.v1
 
 RUN conda install -c r -y pip=20.1.1 openssl=1.1.1c r-base rpy2
 RUN conda install -c conda-forge -y mscorefonts
