@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/azureml/base:openmpi3.1.2-ubuntu18.04
+FROM mcr.microsoft.com/azureml/base:openmpi3.1.2-ubuntu18.04:20210615.v1
 
 RUN conda install -c r -y pip=20.1.1 openssl=1.1.1c r-base rpy2
 RUN conda install -c conda-forge -y mscorefonts
@@ -7,7 +7,6 @@ RUN pip install cryptography==3.3.1
 RUN pip install --no-cache-dir azureml-defaults==1.37.0
 
 ENV TAR="bin/tar"
-ENV BLANK="blank"
 
 # Install additional R packages
 RUN R -e "install.packages(c('remotes', \
