@@ -9,10 +9,9 @@ RUN pip install --no-cache-dir azureml-defaults
 ENV TAR="bin/tar"
 
 # Install additional R packages
-RUN R -e "install.packages('https://cran.r-project.org/src/contrib/Archive/reticulate/reticulate_1.22.tar.gz')"
 RUN R -e "install.packages(c('remotes', \
         'optparse', \
         'azuremlsdk'), repos='https://cloud.r-project.org/')"
         
-RUN python -m pip install azureml
-RUN python -m pip install azureml.core
+RUN R -e "install.packages('https://cran.r-project.org/src/contrib/Archive/reticulate/reticulate_1.22.tar.gz')"
+
