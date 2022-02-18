@@ -4,7 +4,7 @@ RUN conda install -c r -y pip=20.1.1 openssl=1.1.1c r-base rpy2
 RUN conda install -c conda-forge -y mscorefonts
 RUN conda clean -ay
 RUN pip install cryptography==3.3.1
-RUN pip install --no-cache-dir azureml-defaults
+RUN pip install --no-cache-dir azureml-defaults azureml-core
 
 ENV TAR="bin/tar"
 
