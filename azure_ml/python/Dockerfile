@@ -14,3 +14,5 @@ RUN R -e "install.packages(c('remotes', \
         'optparse', \
         'azuremlsdk'), repos='https://cloud.r-project.org/')"
         
+RUN python -m pip install azureml
+RUN python -m pip install azureml.core
