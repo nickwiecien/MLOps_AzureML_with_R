@@ -7,6 +7,7 @@ RUN pip install cryptography==3.3.1
 RUN pip install --no-cache-dir azureml-defaults 
 
 ENV TAR="bin/tar"
+ENV BLANK="blank"
 
 # Install additional R packages
 RUN R -e "install.packages(c('remotes', \
